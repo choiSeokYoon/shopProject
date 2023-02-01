@@ -1,4 +1,5 @@
 {
+  "homepage": "https://choiseokyoon.github.io/shopProject",
   "name": "shop",
   "version": "0.1.0",
   "private": true,
@@ -16,14 +17,15 @@
     "reset": "^0.1.0",
     "styled-components": "^5.3.6",
     "styled-reset": "^4.4.5",
-    "web-vitals": "^2.1.4",
-    "homepage":"https://choiseokyoon.github.io/shopProject/"
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -44,6 +46,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^5.0.0",
     "node-sass": "npm:sass@^1.57.1"
   }
 }
