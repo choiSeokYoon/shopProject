@@ -1,6 +1,5 @@
 import React, { useCallback, useState } from 'react'
 import "./cart.scss"
-import Button from '../components/Button'
 import CartItem from '../components/cart/CartItem'
 import CartHeader from '../components/cart/CartHeader'
 import CartTotal from '../components/cart/CartTotal'

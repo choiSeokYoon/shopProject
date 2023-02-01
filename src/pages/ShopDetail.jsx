@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom'
 import DetailInfo from '../components/detail/DetailInfo'
 import DetailImg from '../components/detail/DetailImg'
 import './ShopDetail.scss'
-import Link from 'react-router-dom'
 
 export default function ShopDtail({cart, setCart}) {
   const [item, setItem] = useState(undefined)
