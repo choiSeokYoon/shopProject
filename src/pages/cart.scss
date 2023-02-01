@@ -1,0 +1,37 @@
+.cart{
+    h2{
+        font-weight: bold;
+        font-size: 3rem;
+        text-align: center;
+        padding: 50px 0;
+    }
+    .cart_con{
+        
+        
+        display: flex;
+        .cart_table{
+            display: flex;
+            flex-direction: column;
+            flex-basis: 70%;
+            
+            .empty{
+                text-align: center;
+                margin-top: 100px;
+                font-size: 30px;
+            }
+            .cart_info{
+                display: flex;
+                flex-direction: column;
+                
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1055px) {
+    .cart_con{
+        flex-direction: column;
+        margin-left: 0px;
+        padding: 0 30px;
+    }
+}

@@ -1,0 +1,49 @@
+.total{
+    flex-basis: 30%;
+    margin-left: 30px;
+    
+    background: #ddd;
+    padding: 20px;
+    .total_box{
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid black;
+        font-size: 20px;
+        .total_box_left{
+            p{
+                padding: 10px 0;
+                font-size: 1.6rem;
+            }
+            h5{
+                padding: 10px 0;
+                font-weight: bold;
+                font-size: 2.0rem;
+            }
+        }
+        .total_box_right{
+            p{
+                padding: 10px 0;
+                font-size: 1.6rem;
+                text-align: end;
+            }
+            h5{
+                padding: 10px 0;
+                font-weight: bold;
+                font-size: 1.6rem;
+            }
+        }
+    }
+    .totalBtn{
+        display: flex;
+        justify-content: space-between;
+        padding: 50px 0;
+        
+    }
+}
+
+@media screen and (max-width:1055px) {
+    .total{
+        margin: 0;
+    }
+    
+}

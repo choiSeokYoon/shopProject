@@ -1,0 +1,51 @@
+.detail_right{
+    flex-basis: 70%;
+    padding-left: 60px;
+    .detail_title{
+        h2{
+            font-size: 3.0rem;
+            padding-bottom: 30px;
+        }
+    }
+    .detail_info{
+        
+        .detail_description{
+            padding: 20px 0;
+            p{
+                font-size: 1.6rem;
+            }
+        }
+        .detail_price{
+            p{
+                text-align: end;
+                font-size: 1.6rem;
+                padding: 50px 0;
+            }
+           
+        }
+    }
+    .detail_count{
+        text-align: end;
+        span{
+            margin: 0 20px;
+            font-size: 1.6rem;
+        }
+        .count_btn{
+            width: 50px;
+            height: 30px;
+            background: gainsboro;
+            border: none;
+            cursor: pointer;
+        }
+    }
+    .detail_cart{
+        text-align: end;
+        padding: 20px 0;
+    }
+}
+@media screen and (max-width:1055px) {
+    
+    .detail_right{
+        padding-right: 30px;
+    }
+}

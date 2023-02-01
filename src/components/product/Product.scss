@@ -1,0 +1,50 @@
+.product{
+    
+    h2{
+        text-align: center;
+        margin: 50px 0;
+        font-weight: bold;
+        font-size: 3rem;
+    }
+    .loading{
+        text-align: center;
+        margin: 200px 0;
+        font-size: 25px;
+        
+    }
+    .err{
+        text-align: center;
+        margin: 200px 0;
+        font-size: 25px;
+    }
+    .product_list{
+        display: flex;
+        .product_category{
+           
+        }
+        
+        padding: 20px 0;
+        
+        
+        ul{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            
+        }
+    }
+}
+
+@media screen and (max-width:1055px) {
+    .product{
+        h2{
+        
+            font-size: 2.5rem;
+        }
+        ul{
+            padding: 0 30px;
+        }
+    }
+  
+    
+}
