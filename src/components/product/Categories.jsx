@@ -9,29 +9,34 @@ export default function categories() {
             text:'all'
         },
         {
-            name:'electronics',
-            text:'electronics'
+            name:'smartphones',
+            text:'smartphones'
         },
         {
-            name:'jewelery',
-            text:'jewelery'
+            name:'laptops',
+            text:'laptops'
         },
         {
-            name:'men',
-            text:'men'
+            name:'fragrances',
+            text:'fragrances'
         },
         {
-            name:'men"s clothing ',
-            text:'men"s clothing '
+            name:'skincare',
+            text:'skincare'
+        },
+        {
+            name:'groceries',
+            text:'groceries'
         },
     ]
+    
   return (
     <div className='categories'>
         <ul>
         {categories.map((c,idx) =>(
             <li key={idx}>
                 <NavLink
-                to={c.name === 'all' ? '/shop' : `/shop/${c.name}`
+                to={c.name === 'all' ? '/' : `/shop/${c.name}`
                 }><p>{c.text}</p>
                 </NavLink>
             </li>

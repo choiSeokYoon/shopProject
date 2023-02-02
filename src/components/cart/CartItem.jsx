@@ -21,7 +21,7 @@ export default function CartItem({cart,  handlCount , onRemove, handleCheckList,
           checked={checkList.includes(cart.id) ? true : false}
         />
         <div className='cart_img'>
-            <img src={cart.image} alt="" />
+            <img src={cart.thumbnail} alt="" />
         </div>
         {isPc && 
         <>

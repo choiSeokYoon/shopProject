@@ -41,7 +41,7 @@ export default function Cart({ cart, setCart , checkList ,setCheckList}) {
     const idx = cart.indexOf(found);
     const cartItem ={
         id: found.id,
-        image:found.image,
+        thumbnail:found.thumbnail,
         title:found.title,
         price:found.price,
         count:count

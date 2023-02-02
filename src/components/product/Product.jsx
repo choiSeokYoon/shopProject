@@ -9,29 +9,17 @@ import { useParams } from 'react-router-dom'
     const params = useParams();
     const category = params.category||''
     const [items, setItem] = useState()
-    /* useEffect (()=>{
-        const qurey = category === '' ? '' : `category/${category}`
-        axios
-        .get(`https://fakestoreapi.com/products/${qurey}`)
-        .then((json)=>{
-            
-            setItem(json.data)
-        })
-        .catch((e)=>{
-            setItem(null)
-        })
-    }, [category])  */
-    
+   
 
     useEffect (()=>{
         const fetchDate = async ()=>{
             try{
                 const qurey = category === '' ? '' : `category/${category}`
                 const json = await axios.get(
-                    `https://fakestoreapi.com/products/${qurey}`
+                    `https://dummyjson.com/products/${qurey}`
                     
                 )
-                setItem(json.data)
+                setItem(json.data.products)
             }catch(e){
                 console.log(e)
             }

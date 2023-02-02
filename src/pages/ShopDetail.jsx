@@ -14,7 +14,7 @@ useEffect(()=>{
   const detailData = async ()=>{
     try{
       const json = await axios.get(
-        `https://fakestoreapi.com/products/${id}`
+        `https://dummyjson.com/products/${id}`
       )
       setItem(json.data)
     }catch(e){

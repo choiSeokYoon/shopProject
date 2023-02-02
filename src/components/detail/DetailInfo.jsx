@@ -17,7 +17,7 @@ export default function DetailInfo({item , cart, setCart}) {
         const idx = cart.indexOf(found);
         const cartItem ={
             id: item.id,
-            image:item.image,
+            thumbnail:item.thumbnail,
             title:item.title,
             price:item.price,
             count:count
@@ -27,7 +27,7 @@ export default function DetailInfo({item , cart, setCart}) {
     const handleCart = () =>{
         const cartItem ={
           id: item.id,
-          image:item.image,
+          thumbnail:item.thumbnail,
           title:item.title,
           price:item.price,
           count:count
