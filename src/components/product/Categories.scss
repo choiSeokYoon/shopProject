@@ -18,3 +18,13 @@
         }
     }
 }
+
+@media screen and (max-width:800px) {
+    .categories{
+        ul{
+            flex-wrap:wrap
+        }
+    
+    }
+   
+}

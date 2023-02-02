@@ -29,6 +29,7 @@ import { useParams } from 'react-router-dom'
                 const qurey = category === '' ? '' : `category/${category}`
                 const json = await axios.get(
                     `https://fakestoreapi.com/products/${qurey}`
+                    
                 )
                 setItem(json.data)
             }catch(e){

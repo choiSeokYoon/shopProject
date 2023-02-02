@@ -60,7 +60,6 @@ export default function DetailInfo({item , cart, setCart}) {
             </div>
             <div className='detail_cart'>
                 <button size="medium"  color="gray" onClick={()=>handleCart()}>CART</button>
-                
             </div>
         </div>
     </div>

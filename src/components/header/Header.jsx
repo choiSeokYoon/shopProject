@@ -13,8 +13,8 @@ export default function Header({cart}) {
               <Link to={'/'}><img src={mainLogo} alt="로고" /></Link>
             </div>
             <ul className='nav_menu'>
-              <li><Link to={'/'}><p>Home</p></Link></li>
-              <li><Link to={'/shop'}><p>Shop</p></Link></li>
+              
+              <li><Link to={'/'}><p>Shop</p></Link></li>
               <li>
                 <Link to={'/cart'}><p>Cart</p></Link>
                 {cart.length >= 1 ? (
