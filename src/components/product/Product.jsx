@@ -27,7 +27,6 @@ import { useParams } from 'react-router-dom'
         fetchDate();
     },[category])
        
-    console.log(items) 
   return (
     <div className='product'>
         <div className='container'>

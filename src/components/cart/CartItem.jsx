@@ -1,7 +1,6 @@
 
 import './CartItem.scss'
 import removeImg from '../../assets/remove.png'
-import { useCallback, useState } from 'react'
 import React, { useMediaQuery  } from 'react-responsive'
 
 

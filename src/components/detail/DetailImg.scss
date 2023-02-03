@@ -1,5 +1,5 @@
 .detail_left{
-    flex-basis: 30%;
+    flex-basis: 50%;
     
     .detail_item_img{
         img{
@@ -9,8 +9,14 @@
     }
 }
 @media screen and (max-width:1055px) {
-    
     .detail_left{
         padding-left: 30px;
+        .detail_item_img{
+            height: 100%;
+            img{
+                height: 60%;
+                width: 100%;
+            }
+        }
     }
 }

@@ -40,7 +40,6 @@ export default function categories() {
                 }><p>{c.text}</p>
                 </NavLink>
             </li>
-         
         ))}
         </ul>
     </div>

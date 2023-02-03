@@ -19,32 +19,37 @@
     }
     .product_list{
         display: flex;
-        .product_category{
-           
-        }
-        
-        padding: 20px 0;
-        
-        
+        padding: 50px 0;
         ul{
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
             
+            li{
+               &:not(:nth-child(3n)){
+                margin-right: 52px;
+               }
+            }
         }
     }
 }
-
 @media screen and (max-width:1055px) {
     .product{
         h2{
-        
             font-size: 2.5rem;
         }
-        ul{
-            padding: 0 30px;
+        .product_list{
+            
+            justify-content: space-between;
+            ul{
+                padding: 0 30px;
+                justify-content: space-between;
+                li{
+                    &:not(:nth-child(3n)){
+                     margin-right: 0;
+                    }
+                 }
+            }
         }
+        
     }
-  
-    
 }

@@ -40,7 +40,7 @@
         }
         .item_count_btn{
             border: none;
-            background: gray;
+            background: #495057;
             color: white;
             height: 40px;
             width: 40px;
@@ -97,7 +97,6 @@
         }
         .cart_item_count{
             display: flex;
-            
             span{
                 align-items: center;
                 justify-content: center;
@@ -116,22 +115,25 @@
 @media screen and (max-width:800px) {
     .cart_item_list{
         .cart_img{
-            
             img{
-
             }
         }
         .cart_item_mobile{
             flex-basis: 50%;
             .cart_item_name{
-                font-size: 1.2rem;
-                
+                font-size: 1.6rem;
                 flex-basis: 50%;
+                display: flex;
+                align-items: center;
             }
             .cart_item_price{
-                font-size: 1.2rem;
+                font-size: 1.6rem;
+                text-align: end;
             }
-            
+            .cart_item_count{
+                display: flex;
+                justify-content: end;
+            }
         }
         .cart_item_count{
             span{
@@ -146,7 +148,7 @@
         }
         .item_remove{
             width: 10px;
-             height: 10px;
+            height: 10px;
              
         }
        

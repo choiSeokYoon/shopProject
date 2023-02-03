@@ -3,7 +3,7 @@
     padding-left: 60px;
     .detail_title{
         h2{
-            font-size: 3.0rem;
+            font-size: 3.5rem;
             padding-bottom: 30px;
         }
     }
@@ -12,7 +12,7 @@
         .detail_description{
             padding: 20px 0;
             p{
-                font-size: 1.6rem;
+                font-size: 2.0rem;
             }
         }
         .detail_price{
@@ -31,22 +31,25 @@
             font-size: 2.0rem;
         }
         .count_btn{
-            width: 50px;
-            height: 30px;
+            width: 40px;
+            height: 40px;
             background: gainsboro;
             border: none;
             cursor: pointer;
+            font-size: 2.0rem;
         }
     }
     .detail_cart{
         text-align: end;
-        padding: 20px 0;
+        padding: 50px 0;
         
         button{
             border: none;
-            background: gray;
+            background: #495057;
             color: white;
-            height: 40px;
+            height: 80px;
+            width: 180px;
+            font-size: 2.5rem;
             cursor: pointer;
         }
     }
@@ -69,12 +72,12 @@
         .detail_count{
             text-align: end;
             span{
-                margin: 0 20px;
+                
                 font-size: 1.2rem;
             }
             .count_btn{
                 width: 30px;
-                
+                height: 30px;
                 
             }
         }
@@ -98,7 +101,7 @@
                 
                 button{
                     font-size: 1.2rem;
-                    height: 20px;
+                    height: 40px;
                     
                 }
             }

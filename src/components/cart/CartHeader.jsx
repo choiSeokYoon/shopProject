@@ -6,7 +6,7 @@ export default function CartHeader({handleAllCheck, isAllChecked}) {
   const isPc = useMediaQuery({
     query:"(min-width:1056px)"
   })
-  const isTablet = useMediaQuery({
+  const isMobile = useMediaQuery({
     query:"(max-width:1056px)"
   })
   
@@ -24,7 +24,7 @@ export default function CartHeader({handleAllCheck, isAllChecked}) {
             <li>수량</li> 
         </ul>
         }
-       {isTablet && <ul className='cart_header_mobile'>
+       {isMobile && <ul className='cart_header_mobile'>
             <li><input type="checkbox" onChange={(e)=>{
               handleAllCheck(e.currentTarget.checked)
             }}
