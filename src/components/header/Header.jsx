@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom'
 import mainLogo from '../../assets/logo.png'
 import './Header.scss'
@@ -28,7 +27,6 @@ export default function Header({cart}) {
           </div>
         </div>
       </div>
-      
     </header>
   )
 }

@@ -9,7 +9,6 @@ import { useParams } from 'react-router-dom'
     const params = useParams();
     const category = params.category||''
     const [items, setItem] = useState()
-   
 
     useEffect (()=>{
         const fetchDate = async ()=>{

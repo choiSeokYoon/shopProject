@@ -1,4 +1,3 @@
-
 import './CartItem.scss'
 import removeImg from '../../assets/remove.png'
 import React, { useMediaQuery  } from 'react-responsive'
@@ -43,10 +42,7 @@ export default function CartItem({cart,  handlCount , onRemove, handleCheckList,
               <button className='item_count_btn' onClick={()=>handlCount("plus", cart.id, cart.count +1)}>+</button>
           </div>
         </div>
-        
         }
-        
-       
         <img src={removeImg} alt=""  className='item_remove' onClick={()=>onRemove(cart.id)}/>
         
     </li>

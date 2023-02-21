@@ -1,6 +1,4 @@
-
 import { useEffect } from 'react'
-import Button from '../Button'
 import './CartTotal.scss'
 
 export default function CartTotal({cart , total , setTotal , found}) {
@@ -20,6 +18,7 @@ export default function CartTotal({cart , total , setTotal , found}) {
             setTotal(0);
         } 
     }, [cart,total,found,setTotal]);
+
   return (
     <div className='total'>
         <div className='total_box'>
@@ -35,8 +34,8 @@ export default function CartTotal({cart , total , setTotal , found}) {
             </div>
         </div>
         <div className='totalBtn'>
-            <Button size="large"  color="gray">선택구매</Button>
-            <Button size="large"  color="gray">구매</Button>
+            <button size="large"  color="gray">선택구매</button>
+            <button size="large"  color="gray">구매</button>
         </div>
     </div>
   )

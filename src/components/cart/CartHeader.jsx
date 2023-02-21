@@ -1,7 +1,6 @@
 import React, { useMediaQuery  } from 'react-responsive'
 import './CartHeader.scss'
 
-
 export default function CartHeader({handleAllCheck, isAllChecked}) {
   const isPc = useMediaQuery({
     query:"(min-width:1056px)"

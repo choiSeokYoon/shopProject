@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React, { useState } from 'react'
 import "./cart.scss"
 import CartItem from '../components/cart/CartItem'
 import CartHeader from '../components/cart/CartHeader'
@@ -8,9 +8,7 @@ import CartTotal from '../components/cart/CartTotal'
 export default function Cart({ cart, setCart , checkList ,setCheckList}) {
   const [total, setTotal] = useState(0);
 
-
-
-  const handleCheckList = (checked,id ) =>{
+  const handleCheckList = (checked,id) =>{
     if(checked){
       setCheckList([...checkList, id])
     }else{
@@ -18,7 +16,7 @@ export default function Cart({ cart, setCart , checkList ,setCheckList}) {
     }
   }
 
-  const handleAllCheck = (checked)=>{
+  const handleAllCheck = checked =>{
     if(checked) {
       const checkItems = [];
       cart.map((cart) => checkItems.push(cart.id))
@@ -27,8 +25,6 @@ export default function Cart({ cart, setCart , checkList ,setCheckList}) {
       setCheckList([])
     }
   }
-
-  
 
   const isAllChecked =cart.length === checkList.length && checkList.length !== 0;
   
@@ -53,7 +49,6 @@ export default function Cart({ cart, setCart , checkList ,setCheckList}) {
         setCart([...cart.slice(0,idx), cartItem, ...cart.slice(idx+1)])
     }
 } 
-
 
 const onRemove = (id) =>{
   setCart(cart.filter((el)=>el.id !==id))

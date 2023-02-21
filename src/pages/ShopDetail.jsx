@@ -8,7 +8,6 @@ import './ShopDetail.scss'
 export default function ShopDtail({cart, setCart}) {
   const [item, setItem] = useState(undefined)
   const {id}  = useParams()
-
   
 useEffect(()=>{
   const detailData = async ()=>{
@@ -25,7 +24,7 @@ useEffect(()=>{
 }, [id])
 
   
-console.log(cart)
+/* console.log(cart) */
   return (
     item && (
     <div className='shopdtail'>

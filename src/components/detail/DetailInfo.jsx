@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import './DetailInfo.scss'
-import Button from '../Button'
 
 export default function DetailInfo({item , cart, setCart}) {
     const [count, setCount] = useState(1)
