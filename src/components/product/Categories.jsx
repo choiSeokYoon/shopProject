@@ -1,47 +1,36 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-import "./Categories.scss"
+import React, { useState } from 'react'
+import { Link, NavLink } from 'react-router-dom'
 
-export default function categories() {
+import "./Categories.scss"
+import { useRecoilState, useRecoilValue } from 'recoil';
+import { fatchPostData } from '../../recoil/selector';
+import { recoilCategory } from './../../recoil/atom';
+
+export default function Categories() {
+    const [categorys, setCategorys] = useRecoilState(recoilCategory)
+    const items = useRecoilValue(fatchPostData)
+    const [active, setActive] = useState(0);
     const categories = [
-        {
-            name:'all',
-            text:'all'
-        },
-        {
-            name:'smartphones',
-            text:'smartphones'
-        },
-        {
-            name:'laptops',
-            text:'laptops'
-        },
-        {
-            name:'fragrances',
-            text:'fragrances'
-        },
-        {
-            name:'skincare',
-            text:'skincare'
-        },
-        {
-            name:'groceries',
-            text:'groceries'
-        },
+        "All",
+        ...new Set(Array.from(items, (item) => item.category))
     ]
-    
+    const handleClick = (idx) =>{
+        setActive(idx)
+        setCategorys(categories[idx])
+    }
+    console.log(categorys)
   return (
     <div className='categories'>
         <ul>
-        {categories.map((c,idx) =>(
-            <li key={idx}>
-                <NavLink
-                to={c.name === 'all' ? '/' : `/shop/${c.name}`
-                }><p>{c.text}</p>
-                </NavLink>
-            </li>
-        ))}
-        </ul>
+            {categories.map((category,idx)=>(
+                <li>
+                
+                <p  key={idx} 
+                className={idx === active ? "active" : ""}
+                onClick={()=>(handleClick(idx))}>{category}</p>
+                </li>
+            ))}
+        </ul> 
     </div>
   )
 }

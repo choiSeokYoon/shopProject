@@ -1,12 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import { useRecoilState, useRecoilValue } from 'recoil'
+import { recoilCategory } from '../../recoil/atom'
+import { fatchPostData } from '../../recoil/selector'
 import './ProductItem.scss'
 
-export default function ProductItem({items}) {
-  /* console.log(items.image[0]) */
+export default function ProductItem() {
+  const [categorys, setCategorys] = useRecoilState(recoilCategory)
+
+  const items = useRecoilValue(fatchPostData)
+  const categoryData = 
+        categorys === "All"
+            ? items
+            : items.filter((item) => item.category === categorys)
+    
   return (
     <>
-      {items && items.map(item =>
+      {categoryData.map(item =>
         <li key={item.id} className='item_list'>
           <NavLink to={`/shop/detail/${item.id}`}>
             <div className='item_box'>
