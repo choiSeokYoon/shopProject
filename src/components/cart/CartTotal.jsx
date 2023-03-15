@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { useRecoilState } from 'recoil';
 import { recoilCart, recoilCheckList, recoilTotal } from '../../recoil/atom';
 import './CartTotal.scss'

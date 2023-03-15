@@ -1,17 +1,16 @@
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import DetailInfo from '../components/detail/DetailInfo'
 import DetailImg from '../components/detail/DetailImg'
 import './ShopDetail.scss'
-import { useRecoilValue, useRecoilState } from 'recoil';
+import {  useRecoilState } from 'recoil';
 import { recoilCart, recoilDetailData } from '../recoil/atom'
 
 export default function ShopDtail() {
   const [item, setItem] = useRecoilState(recoilDetailData)
-  const [cart, setCart] = useRecoilState(recoilCart)
   const {id}  = useParams()
-  console.log(item)
+
 useEffect(()=>{
   const detailData = async ()=>{
     try{
@@ -27,7 +26,6 @@ useEffect(()=>{
 }, [id])
 
   
-/* console.log(cart) */
   return (
     item && (
     <div className='shopdtail'>

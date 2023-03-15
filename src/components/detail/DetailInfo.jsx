@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
 import './DetailInfo.scss'
-import { useRecoilValue, useRecoilState } from 'recoil';
+import { useRecoilState } from 'recoil';
 import { recoilCart, recoilDetailData } from '../../recoil/atom';
 
 export default function DetailInfo() {
     const [count, setCount] = useState(1)
     const [cart, setCart] = useRecoilState(recoilCart)
     const [item, setItem] = useRecoilState(recoilDetailData)
-    console.log(item)
     const plusCount = () =>{
         setCount(count+1)
     }
@@ -42,8 +41,7 @@ export default function DetailInfo() {
             setCart([...cart,cartItem])
         }
         
-      }
-      console.log(cart) 
+      } 
   return (
     <div className='detail_right'>
         <div className='detail_title'>

@@ -7,15 +7,16 @@ import ShopDtail from './pages/ShopDetail';
 import { useState } from 'react';
 import './style/font.scss'
 import { Suspense } from 'react';
+import Loading from './components/loading/Loading';
 
 function App() {
   const [cart, setCart] = useState([])
-  
+
 
   return (
     <>
-      <Suspense fallback={<div>loading</div>} >
       <Header cart={cart}/>
+      <Suspense fallback={<Loading/>}>
       <Routes>
         <Route path='/' element={<Shop/>}/>
         <Route path='/shop/:category' element={<Shop/>}/>

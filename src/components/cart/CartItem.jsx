@@ -1,17 +1,16 @@
 import './CartItem.scss'
 import removeImg from '../../assets/remove.png'
 import React, { useMediaQuery  } from 'react-responsive'
-import { recoilCart, recoilCheckList, recoilTotal } from '../../recoil/atom'
+import { recoilCart, recoilCheckList } from '../../recoil/atom'
 import { useRecoilState } from 'recoil'
 
 
 export default function CartItem() {
-  const [total , setTotal] = useRecoilState(recoilTotal)
   const [checkList, setCheckList] = useRecoilState(recoilCheckList)
   const [cart, setCart] = useRecoilState(recoilCart)
   
 
-  console.log(cart)
+  
   const handleCheckList = (checked,id) =>{
     if(checked){
       setCheckList([...checkList, id])

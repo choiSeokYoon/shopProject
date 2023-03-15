@@ -17,13 +17,12 @@ export default function Categories() {
         setActive(idx)
         setCategorys(categories[idx])
     }
-    console.log(categorys)
   return (
     <div className='categories'>
         <ul>
             {categories.map((category,idx)=>(
-                <li>
-                <p  key={idx} 
+                <li key={idx}>
+                <p 
                 className={idx === active ? "active" : ""}
                 onClick={()=>(handleClick(idx))}>{category}</p>
                 </li>

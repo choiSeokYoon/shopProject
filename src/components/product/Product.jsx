@@ -2,16 +2,10 @@
 import ProductItem from './ProductItem'
 import Categories from './Categories'
 import './Product.scss'
-import { useRecoilValue } from 'recoil'
-import { fatchPostData } from '../../recoil/selector'
+
 
  export default function Product() {
-    const items = useRecoilValue(fatchPostData)
-    console.log(items)
-    
 
-    
-    
        
   return (
     <div className='product'>
