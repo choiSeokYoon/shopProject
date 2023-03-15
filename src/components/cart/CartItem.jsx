@@ -1,10 +1,49 @@
 import './CartItem.scss'
 import removeImg from '../../assets/remove.png'
 import React, { useMediaQuery  } from 'react-responsive'
+import { recoilCart, recoilCheckList, recoilTotal } from '../../recoil/atom'
+import { useRecoilState } from 'recoil'
 
 
-export default function CartItem({cart,  handlCount , onRemove, handleCheckList,checkList ,setCheckList}) {
-    
+export default function CartItem() {
+  const [total , setTotal] = useRecoilState(recoilTotal)
+  const [checkList, setCheckList] = useRecoilState(recoilCheckList)
+  const [cart, setCart] = useRecoilState(recoilCart)
+  
+
+  console.log(cart)
+  const handleCheckList = (checked,id) =>{
+    if(checked){
+      setCheckList([...checkList, id])
+    }else{
+      setCheckList(checkList.filter((check)=>check !== id))
+    }
+  }
+
+  const handlCount = (type, id, count)=>{
+    const found = cart.filter((el) => el.id ===id)[0];
+    const idx = cart.indexOf(found);
+    const cartItem ={
+        id: found.id,
+        thumbnail:found.thumbnail,
+        title:found.title,
+        price:found.price,
+        count:count
+    }
+    if(type ==='plus'){
+        setCart([...cart.slice(0,idx), cartItem, ...cart.slice(idx+1)])
+    }else{
+      if(count === 0) return;
+        setCart([...cart.slice(0,idx), cartItem, ...cart.slice(idx+1)])
+    }
+} 
+
+const onRemove = (id) =>{
+  setCart(cart.filter((el)=>el.id !==id))
+}
+
+
+
   const isPc = useMediaQuery({
     query:"(min-width:1056px)"
   })
@@ -12,7 +51,8 @@ export default function CartItem({cart,  handlCount , onRemove, handleCheckList,
     query:"(max-width:1056px)"
   })
   return (
-    <li className='cart_item_list'>
+    (cart.map((cart)=>(
+      <li className='cart_item_list' key={cart.id}>
         <input type="checkbox"  onChange={(e)=>{
           handleCheckList(e.currentTarget.checked,cart.id)
           }}
@@ -46,5 +86,7 @@ export default function CartItem({cart,  handlCount , onRemove, handleCheckList,
         <img src={removeImg} alt=""  className='item_remove' onClick={()=>onRemove(cart.id)}/>
         
     </li>
+    )))
+    
   )
 }

@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
 
 import "./Categories.scss"
 import { useRecoilState, useRecoilValue } from 'recoil';
@@ -24,7 +23,6 @@ export default function Categories() {
         <ul>
             {categories.map((category,idx)=>(
                 <li>
-                
                 <p  key={idx} 
                 className={idx === active ? "active" : ""}
                 onClick={()=>(handleClick(idx))}>{category}</p>

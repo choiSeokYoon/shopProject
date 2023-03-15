@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios'
+
 import ProductItem from './ProductItem'
 import Categories from './Categories'
 import './Product.scss'
@@ -9,7 +8,6 @@ import { fatchPostData } from '../../recoil/selector'
  export default function Product() {
     const items = useRecoilValue(fatchPostData)
     console.log(items)
-    const [categorys , setCategorys] = useState("All")
     
 
     

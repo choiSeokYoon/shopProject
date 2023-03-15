@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom'
+import { useRecoilState } from 'recoil'
 import mainLogo from '../../assets/logo.png'
+import { recoilCart } from '../../recoil/atom'
 import './Header.scss'
 
-export default function Header({cart}) {
+export default function Header() {
+  const [cart, setCart] = useRecoilState(recoilCart)
   return (
     <header>
       <div className='nav'>

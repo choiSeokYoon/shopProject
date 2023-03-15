@@ -1,8 +1,19 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import { useRecoilState } from 'recoil';
+import { recoilCart, recoilCheckList, recoilTotal } from '../../recoil/atom';
 import './CartTotal.scss'
 
-export default function CartTotal({cart , total , setTotal , found}) {
-    
+export default function CartTotal() {
+    const [total , setTotal] = useRecoilState(recoilTotal)
+    const [checkList, setCheckList] = useRecoilState(recoilCheckList)
+    const [cart, setCart] = useRecoilState(recoilCart)
+
+
+    const found = checkList.map((checkLists) => 
+    cart.filter((el)=> el.id === checkLists)
+    )
+
+  
     useEffect(()=>{
         if(found){
             const temp = found.filter((item) => item.length !== 0) //삭제오류 해결
