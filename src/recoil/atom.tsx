@@ -1,12 +1,12 @@
 import {atom} from "recoil"
 //디테일데이터
-export const recoilDetailData = atom({
+export const recoilDetailData = atom<string>({
     key : "recoilDetailData",
     default: undefined
 })
 
 //카테고리
-export const recoilCategory = atom({
+export const recoilCategory = atom<string>({
     key:"recoilCategory",
     default: "All",
 });

@@ -2,13 +2,13 @@
 import { NavLink } from 'react-router-dom'
 import { useRecoilState, useRecoilValue } from 'recoil'
 import { recoilCategory } from '../../recoil/atom'
-import { fatchPostData } from '../../recoil/selector'
+import { fetchPostData } from '../../recoil/selector'
 import './ProductItem.scss'
 
 export default function ProductItem() {
   const [categorys, setCategorys] = useRecoilState(recoilCategory)
 
-  const items = useRecoilValue(fatchPostData)
+  const items = useRecoilValue(fetchPostData)
   const categoryData = 
         categorys === "All"
             ? items

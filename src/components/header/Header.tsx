@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import { useRecoilState } from 'recoil'
-import mainLogo from '../../assets/logo.png'
 import { recoilCart } from '../../recoil/atom'
 import './Header.scss'
 
@@ -12,7 +11,7 @@ export default function Header() {
         <div className='container'>
           <div className='nav_contents'>
             <div className='logo'>
-              <Link to={'/'}><img src={mainLogo} alt="로고" /></Link>
+              <Link to={'/'}><img src={require("../../assets/logo.png")} alt="로고" /></Link>
             </div>
             <ul className='nav_menu'>
               
