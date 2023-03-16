@@ -34,8 +34,8 @@ useEffect(()=>{
           <div>로딩중...</div> :item === null ?
           <div>404</div> : (
             <div className='detail_item'>
-              <DetailImg item={item}/>
-              <DetailInfo item={item} />
+              <DetailImg/>
+              <DetailInfo />
             </div>
           )
         }

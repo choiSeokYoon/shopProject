@@ -1,17 +1,17 @@
 import './CartItem.scss'
-import removeImg from '../../assets/remove.png'
 import React, { useMediaQuery  } from 'react-responsive'
 import { recoilCart, recoilCheckList } from '../../recoil/atom'
 import { useRecoilState } from 'recoil'
+import { IData } from '../../type/data.type'
 
 
 export default function CartItem() {
   const [checkList, setCheckList] = useRecoilState(recoilCheckList)
   const [cart, setCart] = useRecoilState(recoilCart)
   
-
   
-  const handleCheckList = (checked,id) =>{
+  
+  const handleCheckList = (checked : boolean,id: number) =>{
     if(checked){
       setCheckList([...checkList, id])
     }else{
@@ -19,15 +19,22 @@ export default function CartItem() {
     }
   }
 
-  const handlCount = (type, id, count)=>{
+  const handlCount = (type:string, id:number, count:number)=>{
     const found = cart.filter((el) => el.id ===id)[0];
     const idx = cart.indexOf(found);
-    const cartItem ={
+    const cartItem : IData ={
         id: found.id,
         thumbnail:found.thumbnail,
+        discountPercentage: found.discountPercentage,
+        rating: found.rating,
+        stock: found.stock,
+        brand: found.brand,
+        category:found.category,
+        description:found.description,
+        images:found.images,
         title:found.title,
         price:found.price,
-        count:count
+        count: count,
     }
     if(type ==='plus'){
         setCart([...cart.slice(0,idx), cartItem, ...cart.slice(idx+1)])
@@ -37,7 +44,7 @@ export default function CartItem() {
     }
 } 
 
-const onRemove = (id) =>{
+const onRemove = (id:number) =>{
   setCart(cart.filter((el)=>el.id !==id))
 }
 
@@ -50,7 +57,8 @@ const onRemove = (id) =>{
     query:"(max-width:1056px)"
   })
   return (
-    (cart.map((cart)=>(
+    <>
+    {cart.map((cart)=>(
       <li className='cart_item_list' key={cart.id}>
         <input type="checkbox"  onChange={(e)=>{
           handleCheckList(e.currentTarget.checked,cart.id)
@@ -82,10 +90,10 @@ const onRemove = (id) =>{
           </div>
         </div>
         }
-        <img src={removeImg} alt=""  className='item_remove' onClick={()=>onRemove(cart.id)}/>
+        <img src={require("../../assets/remove.png")} alt=""  className='item_remove' onClick={()=>onRemove(cart.id)}/>
         
     </li>
-    )))
-    
+    ))}
+    </>
   )
 }

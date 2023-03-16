@@ -6,9 +6,9 @@ import './CartHeader.scss'
 export default function CartHeader() {
   const [cart, setCart] = useRecoilState(recoilCart)
   const [checkList, setCheckList] = useRecoilState(recoilCheckList)
-  const handleAllCheck = checked =>{
+  const handleAllCheck = (checked:boolean) =>{
     if(checked) {
-      const checkItems = [];
+      const checkItems:number[] = [];
       cart.map((cart) => checkItems.push(cart.id))
       setCheckList(checkItems)
     } else{

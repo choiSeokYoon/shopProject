@@ -18,7 +18,7 @@ export default function CartTotal() {
         if(found){
             const temp = found.filter((item) => item.length !== 0) //삭제오류 해결
             const sum = temp.map((item) => item[0].price * item[0].count);
-            const reducer = (acc, cur) => acc + cur;
+            const reducer = (acc:number, cur:number) => acc + cur;
             if(sum.length === 0){
                 setTotal(0);
                 return;
@@ -45,8 +45,8 @@ export default function CartTotal() {
             </div>
         </div>
         <div className='totalBtn'>
-            <button size="large"  color="gray">선택구매</button>
-            <button size="large"  color="gray">구매</button>
+            <button color="gray">선택구매</button>
+            <button color="gray">구매</button>
         </div>
     </div>
   )

@@ -1,5 +1,5 @@
 
-import "./cart.scss"
+import "./Cart.scss"
 import CartItem from '../components/cart/CartItem'
 import CartHeader from '../components/cart/CartHeader'
 import CartTotal from '../components/cart/CartTotal'
@@ -24,9 +24,7 @@ export default function Cart() {
              </ul>
             }
           </div>
-          <CartTotal 
-          
-          />
+          <CartTotal/>
         </div>
       </div>
     </div>

@@ -1,21 +1,10 @@
 import { selector } from "recoil";
 import axios from "axios";
+import { IData } from "../type/data.type";
 
 const url = "https://dummyjson.com/products/";
 
-interface IData {
-  id: number;
-  title: string;
-  description: string;
-  price: number;
-  discountPercentage: number;
-  rating: number;
-  stock: number;
-  brand: string;
-  category: string;
-  thumbnail: string;
-  images: string[];
-}
+
 
 export const fetchPostData = selector<IData[]>({
   key: "fetchPostData",
