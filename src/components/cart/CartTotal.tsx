@@ -45,7 +45,7 @@ export default function CartTotal() {
             </div>
         </div>
         <div className='totalBtn'>
-            <button color="gray">선택구매</button>
+            
             <button color="gray">구매</button>
         </div>
     </div>

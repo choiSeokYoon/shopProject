@@ -36,15 +36,18 @@
     }
     .totalBtn{
         display: flex;
-        justify-content: space-between;
-        padding: 50px 0;
+        width: 100%;
+        padding: 20px 0;
+        
         button{
+            margin: 0 auto;
             border: none;
             background: #495057;
             color: #fff;
            border-radius: 8px;
            height: 40px;
            width: 100px;
+           cursor: pointer;
         }
     }
 }
